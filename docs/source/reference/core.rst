@@ -1,9 +1,9 @@
-Class
-======
+core
+====
 
-.. autoclass:: msdss_models_sklearn
+.. automodule:: msdss_models_sklearn.core
 
-Method
-------
+get_sklearn_models
+------------------
 
-.. automethod:: msdss_models_sklearn
+.. autofunction:: msdss_models_sklearn.core.get_sklearn_models
