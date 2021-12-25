@@ -17,3 +17,8 @@ create_update_method
 --------------------
 
 .. autofunction:: msdss_models_sklearn.tools.create_update_method
+
+get_sklearn_models
+------------------
+
+.. autofunction:: msdss_models_sklearn.tools.get_sklearn_models
