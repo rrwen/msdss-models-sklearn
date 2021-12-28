@@ -69,7 +69,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=indigo data-md-color-accent=light-blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -275,7 +275,7 @@
     <span class="sd">"""</span>
 <span class="sd">    Create model input method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.</span>
 
-<span class="sd">    See :class:`msdss_models_api:msdss_models_api.models.Model.input`.</span>
+<span class="sd">    See :meth:`msdss_models_api:msdss_models_api.models.Model.input`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -314,7 +314,7 @@
     <span class="sd">"""</span>
 <span class="sd">    Create model output method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.</span>
 
-<span class="sd">    See :class:`msdss_models_api:msdss_models_api.models.Model.output`.</span>
+<span class="sd">    See :meth:`msdss_models_api:msdss_models_api.models.Model.output`.</span>
 
 <span class="sd">    Author</span>
 <span class="sd">    ------</span>
@@ -326,7 +326,7 @@
 
 <span class="sd">        from msdss_models_sklearn.tools import *</span>
 
-<span class="sd">        input = create_output_method()</span>
+<span class="sd">        output = create_output_method()</span>
 <span class="sd">    """</span>
     <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
@@ -356,7 +356,7 @@
     <span class="sd">"""</span>
 <span class="sd">    Create model update method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.</span>
 
-<span class="sd">    See :class:`msdss_models_api:msdss_models_api.models.Model.update`.</span>
+<span class="sd">    See :meth:`msdss_models_api:msdss_models_api.models.Model.update`.</span>
 
 <span class="sd">    Author</span>
 <span class="sd">    ------</span>
@@ -368,7 +368,7 @@
 
 <span class="sd">        from msdss_models_sklearn.tools import *</span>
 
-<span class="sd">        input = create_output_method()</span>
+<span class="sd">        update = create_output_method()</span>
 <span class="sd">    """</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 

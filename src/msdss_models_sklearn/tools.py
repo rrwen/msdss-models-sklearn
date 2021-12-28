@@ -4,7 +4,7 @@ def create_input_method(model):
     """
     Create model input method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
 
-    See :class:`msdss_models_api:msdss_models_api.models.Model.input`.
+    See :meth:`msdss_models_api:msdss_models_api.models.Model.input`.
 
     Parameters
     ----------
@@ -43,7 +43,7 @@ def create_output_method():
     """
     Create model output method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
 
-    See :class:`msdss_models_api:msdss_models_api.models.Model.output`.
+    See :meth:`msdss_models_api:msdss_models_api.models.Model.output`.
 
     Author
     ------
@@ -55,7 +55,7 @@ def create_output_method():
 
         from msdss_models_sklearn.tools import *
 
-        input = create_output_method()
+        output = create_output_method()
     """
     def output(self, data, x=None, y=None, *args, **kwargs):
 
@@ -85,7 +85,7 @@ def create_update_method():
     """
     Create model update method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
 
-    See :class:`msdss_models_api:msdss_models_api.models.Model.update`.
+    See :meth:`msdss_models_api:msdss_models_api.models.Model.update`.
 
     Author
     ------
@@ -97,7 +97,7 @@ def create_update_method():
 
         from msdss_models_sklearn.tools import *
 
-        input = create_output_method()
+        update = create_output_method()
     """
     def update(self, data, x=None, y=None, *args, **kwargs):
 
