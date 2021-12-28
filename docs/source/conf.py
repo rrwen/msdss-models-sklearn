@@ -52,7 +52,8 @@ extensions = [
     'sphinx.ext.mathjax'
 ]
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None)
+    'python': ('https://docs.python.org/3/', None),
+    'msdss_models_api': ('https://rrwen.github.io/msdss-models-api/', None),
 }
 napoleon_custom_sections = ['Author', 'Authors']
 napoleon_include_private_with_doc = True
@@ -107,7 +108,7 @@ html_sidebars = {
 html_theme_options = {
     'nav_title': 'msdss-models-sklearn',
     'base_url': 'https://rrwen.github.io/msdss-models-sklearn',
-    'color_primary': 'indigo',
+    'color_primary': 'blue',
     'color_accent': 'light-blue',
     'repo_url': 'https://github.com/rrwen/msdss-models-sklearn/',
     'repo_name': 'msdss-models-sklearn'

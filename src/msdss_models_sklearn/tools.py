@@ -1,6 +1,29 @@
 import pandas
 
 def create_input_method(model):
+    """
+    Create model input method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
+
+    See :class:`msdss_models_api:msdss_models_api.models.Model.input`.
+
+    Parameters
+    ----------
+    model : class
+        Scikit-learn model class to create machine learning models.
+
+    Author
+    ------
+    Richard Wen <rrwen.dev@gmail.com>
+    
+    Example
+    -------
+    .. jupyter-execute::
+
+        from msdss_models_sklearn.tools import *
+        from sklearn.linear_model import LinearRegression
+
+        input = create_input_method(LinearRegression)
+    """
     def input(self, data, x=None, y=None, _fit={}, *args, **kwargs):
         
         # (create_input_method_vars) Set default vars
@@ -17,6 +40,23 @@ def create_input_method(model):
     return input
 
 def create_output_method():
+    """
+    Create model output method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
+
+    See :class:`msdss_models_api:msdss_models_api.models.Model.output`.
+
+    Author
+    ------
+    Richard Wen <rrwen.dev@gmail.com>
+    
+    Example
+    -------
+    .. jupyter-execute::
+
+        from msdss_models_sklearn.tools import *
+
+        input = create_output_method()
+    """
     def output(self, data, x=None, y=None, *args, **kwargs):
 
         # (create_output_method_vars) Set default vars
@@ -42,6 +82,23 @@ def create_output_method():
     return output
 
 def create_update_method():
+    """
+    Create model update method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
+
+    See :class:`msdss_models_api:msdss_models_api.models.Model.update`.
+
+    Author
+    ------
+    Richard Wen <rrwen.dev@gmail.com>
+    
+    Example
+    -------
+    .. jupyter-execute::
+
+        from msdss_models_sklearn.tools import *
+
+        input = create_output_method()
+    """
     def update(self, data, x=None, y=None, *args, **kwargs):
 
         # (create_update_method_vars) Set default vars

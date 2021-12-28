@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>core &#8212; 0.0.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tools" href="tools.html" />
+    <link rel="prev" title="API Reference" href="index.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#reference/core" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="0.0.0"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/logo.svg" height="26"
+                   alt="0.0.0 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">msdss-models-sklearn</span>
+          <span class="md-header-nav__topic"> core </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rrwen/msdss-models-sklearn/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    msdss-models-sklearn
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">0.0.0</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">API Reference</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="0.0.0" class="md-nav__button md-logo">
+      
+        <img src="../_static/logo.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="0.0.0">msdss-models-sklearn</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rrwen/msdss-models-sklearn/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    msdss-models-sklearn
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../install.html" class="md-nav__link">Install</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickstart.html" class="md-nav__link">Quick Start</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../howitworks.html" class="md-nav__link">How it Works</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#reference-core--page-root" class="md-nav__link">core</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#get-sklearn-models" class="md-nav__link">get_sklearn_models</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/reference/core.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="module-msdss_models_sklearn.core">
+<span id="core"></span><h1 id="reference-core--page-root">core<a class="headerlink" href="#reference-core--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="get-sklearn-models">
+<h2 id="get-sklearn-models">get_sklearn_models<a class="headerlink" href="#get-sklearn-models" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="msdss_models_sklearn.core.get_sklearn_models">
+<span class="sig-prename descclassname"><span class="pre">msdss_models_sklearn.core.</span></span><span class="sig-name descname"><span class="pre">get_sklearn_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'msdss_models_sklearn.core'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['calibration',</span> <span class="pre">'cluster',</span> <span class="pre">'compose',</span> <span class="pre">'covariance',</span> <span class="pre">'cross_decomposition',</span> <span class="pre">'decomposition',</span> <span class="pre">'discriminant_analysis',</span> <span class="pre">'ensemble',</span> <span class="pre">'feature_extraction',</span> <span class="pre">'feature_selection',</span> <span class="pre">'gaussian_process',</span> <span class="pre">'impute',</span> <span class="pre">'isotonic',</span> <span class="pre">'kernel_approximation',</span> <span class="pre">'kernel_ridge',</span> <span class="pre">'linear_model',</span> <span class="pre">'manifold',</span> <span class="pre">'mixture',</span> <span class="pre">'naive_bayes',</span> <span class="pre">'neighbors',</span> <span class="pre">'neural_network',</span> <span class="pre">'preprocessing',</span> <span class="pre">'random_projection',</span> <span class="pre">'semi_supervised',</span> <span class="pre">'svm',</span> <span class="pre">'tree']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/msdss_models_sklearn/core.html#get_sklearn_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#msdss_models_sklearn.core.get_sklearn_models" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract scikit-learn models and convert them into <a class="reference external" href="https://rrwen.github.io/msdss-models-api/reference/models.html#msdss_models_api.models.Model" title="(in msdss_models_api v0.0.6)"><code class="docutils literal notranslate"><span class="pre">msdss_models_api.models.Model</span></code></a> classes with appropriate methods for input, output, and update.</p>
+<p>To extract scikit-learn models, the general process is:</p>
+<ol class="arabic">
+<li><p>Get the models module (modules are manually defined from inspecting the docs)</p></li>
+<li><p>Filter out all names in the module where the first letter is not capitalized or contains an underscore</p></li>
+<li><p>Filter out all names in the module that are not classes or are not part of the module</p></li>
+<li><p>Dynamically create a class for the resulting names, extending from <a class="reference external" href="https://rrwen.github.io/msdss-models-api/reference/models.html#msdss_models_api.models.Model" title="(in msdss_models_api v0.0.6)"><code class="docutils literal notranslate"><span class="pre">msdss_models_api.models.Model</span></code></a></p></li>
+<li><p>Add methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input</span></code> using <a class="reference internal" href="tools.html#msdss_models_sklearn.tools.create_input_method" title="msdss_models_sklearn.tools.create_input_method"><code class="xref py py-func docutils literal notranslate"><span class="pre">msdss_models_sklearn.tools.create_input_method()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> using <a class="reference internal" href="tools.html#msdss_models_sklearn.tools.create_output_method" title="msdss_models_sklearn.tools.create_output_method"><code class="xref py py-func docutils literal notranslate"><span class="pre">msdss_models_sklearn.tools.create_output_method()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">update</span></code> using <a class="reference internal" href="tools.html#msdss_models_sklearn.tools.create_update_method" title="msdss_models_sklearn.tools.create_update_method"><code class="xref py py-func docutils literal notranslate"><span class="pre">msdss_models_sklearn.tools.create_update_method()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_module</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Name of the base module to attach model namespaces to.</p></li>
+<li><p><strong>modules</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>)</em>) – List of scikit-learn module names to extract models from.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Author</p>
+<p>Richard Wen &lt;<a class="reference external" href="mailto:rrwen.dev%40gmail.com">rrwen<span>.</span>dev<span>@</span>gmail<span>.</span>com</a>&gt;</p>
+<p class="rubric">Example</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">msdss_models_sklearn</span> <span class="kn">import</span> <span class="n">models</span> <span class="k">as</span> <span class="n">sklearn_models</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Print all converted models</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">sklearn_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{'sklearn.calibration.CalibratedClassifierCV': &lt;class 'msdss_models_sklearn.core.CalibratedClassifierCV'&gt;,
+ 'sklearn.calibration.CalibrationDisplay': &lt;class 'msdss_models_sklearn.core.CalibrationDisplay'&gt;,
+ 'sklearn.cluster.AffinityPropagation': &lt;class 'msdss_models_sklearn.core.AffinityPropagation'&gt;,
+ 'sklearn.cluster.AgglomerativeClustering': &lt;class 'msdss_models_sklearn.core.AgglomerativeClustering'&gt;,
+ 'sklearn.cluster.Birch': &lt;class 'msdss_models_sklearn.core.Birch'&gt;,
+ 'sklearn.cluster.DBSCAN': &lt;class 'msdss_models_sklearn.core.DBSCAN'&gt;,
+ 'sklearn.cluster.FeatureAgglomeration': &lt;class 'msdss_models_sklearn.core.FeatureAgglomeration'&gt;,
+ 'sklearn.cluster.KMeans': &lt;class 'msdss_models_sklearn.core.KMeans'&gt;,
+ 'sklearn.cluster.MeanShift': &lt;class 'msdss_models_sklearn.core.MeanShift'&gt;,
+ 'sklearn.cluster.MiniBatchKMeans': &lt;class 'msdss_models_sklearn.core.MiniBatchKMeans'&gt;,
+ 'sklearn.cluster.OPTICS': &lt;class 'msdss_models_sklearn.core.OPTICS'&gt;,
+ 'sklearn.cluster.SpectralBiclustering': &lt;class 'msdss_models_sklearn.core.SpectralBiclustering'&gt;,
+ 'sklearn.cluster.SpectralClustering': &lt;class 'msdss_models_sklearn.core.SpectralClustering'&gt;,
+ 'sklearn.cluster.SpectralCoclustering': &lt;class 'msdss_models_sklearn.core.SpectralCoclustering'&gt;,
+ 'sklearn.compose.ColumnTransformer': &lt;class 'msdss_models_sklearn.core.ColumnTransformer'&gt;,
+ 'sklearn.compose.TransformedTargetRegressor': &lt;class 'msdss_models_sklearn.core.TransformedTargetRegressor'&gt;,
+ 'sklearn.covariance.EllipticEnvelope': &lt;class 'msdss_models_sklearn.core.EllipticEnvelope'&gt;,
+ 'sklearn.covariance.EmpiricalCovariance': &lt;class 'msdss_models_sklearn.core.EmpiricalCovariance'&gt;,
+ 'sklearn.covariance.GraphicalLasso': &lt;class 'msdss_models_sklearn.core.GraphicalLasso'&gt;,
+ 'sklearn.covariance.GraphicalLassoCV': &lt;class 'msdss_models_sklearn.core.GraphicalLassoCV'&gt;,
+ 'sklearn.covariance.LedoitWolf': &lt;class 'msdss_models_sklearn.core.LedoitWolf'&gt;,
+ 'sklearn.covariance.MinCovDet': &lt;class 'msdss_models_sklearn.core.MinCovDet'&gt;,
+ 'sklearn.covariance.OAS': &lt;class 'msdss_models_sklearn.core.OAS'&gt;,
+ 'sklearn.covariance.ShrunkCovariance': &lt;class 'msdss_models_sklearn.core.ShrunkCovariance'&gt;,
+ 'sklearn.cross_decomposition.CCA': &lt;class 'msdss_models_sklearn.core.CCA'&gt;,
+ 'sklearn.cross_decomposition.PLSCanonical': &lt;class 'msdss_models_sklearn.core.PLSCanonical'&gt;,
+ 'sklearn.cross_decomposition.PLSRegression': &lt;class 'msdss_models_sklearn.core.PLSRegression'&gt;,
+ 'sklearn.cross_decomposition.PLSSVD': &lt;class 'msdss_models_sklearn.core.PLSSVD'&gt;,
+ 'sklearn.decomposition.DictionaryLearning': &lt;class 'msdss_models_sklearn.core.DictionaryLearning'&gt;,
+ 'sklearn.decomposition.FactorAnalysis': &lt;class 'msdss_models_sklearn.core.FactorAnalysis'&gt;,
+ 'sklearn.decomposition.FastICA': &lt;class 'msdss_models_sklearn.core.FastICA'&gt;,
+ 'sklearn.decomposition.IncrementalPCA': &lt;class 'msdss_models_sklearn.core.IncrementalPCA'&gt;,
+ 'sklearn.decomposition.KernelPCA': &lt;class 'msdss_models_sklearn.core.KernelPCA'&gt;,
+ 'sklearn.decomposition.LatentDirichletAllocation': &lt;class 'msdss_models_sklearn.core.LatentDirichletAllocation'&gt;,
+ 'sklearn.decomposition.MiniBatchDictionaryLearning': &lt;class 'msdss_models_sklearn.core.MiniBatchDictionaryLearning'&gt;,
+ 'sklearn.decomposition.MiniBatchSparsePCA': &lt;class 'msdss_models_sklearn.core.MiniBatchSparsePCA'&gt;,
+ 'sklearn.decomposition.NMF': &lt;class 'msdss_models_sklearn.core.NMF'&gt;,
+ 'sklearn.decomposition.PCA': &lt;class 'msdss_models_sklearn.core.PCA'&gt;,
+ 'sklearn.decomposition.SparseCoder': &lt;class 'msdss_models_sklearn.core.SparseCoder'&gt;,
+ 'sklearn.decomposition.SparsePCA': &lt;class 'msdss_models_sklearn.core.SparsePCA'&gt;,
+ 'sklearn.decomposition.TruncatedSVD': &lt;class 'msdss_models_sklearn.core.TruncatedSVD'&gt;,
+ 'sklearn.discriminant_analysis.LinearDiscriminantAnalysis': &lt;class 'msdss_models_sklearn.core.LinearDiscriminantAnalysis'&gt;,
+ 'sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis': &lt;class 'msdss_models_sklearn.core.QuadraticDiscriminantAnalysis'&gt;,
+ 'sklearn.ensemble.AdaBoostClassifier': &lt;class 'msdss_models_sklearn.core.AdaBoostClassifier'&gt;,
+ 'sklearn.ensemble.AdaBoostRegressor': &lt;class 'msdss_models_sklearn.core.AdaBoostRegressor'&gt;,
+ 'sklearn.ensemble.BaggingClassifier': &lt;class 'msdss_models_sklearn.core.BaggingClassifier'&gt;,
+ 'sklearn.ensemble.BaggingRegressor': &lt;class 'msdss_models_sklearn.core.BaggingRegressor'&gt;,
+ 'sklearn.ensemble.BaseEnsemble': &lt;class 'msdss_models_sklearn.core.BaseEnsemble'&gt;,
+ 'sklearn.ensemble.ExtraTreesClassifier': &lt;class 'msdss_models_sklearn.core.ExtraTreesClassifier'&gt;,
+ 'sklearn.ensemble.ExtraTreesRegressor': &lt;class 'msdss_models_sklearn.core.ExtraTreesRegressor'&gt;,
+ 'sklearn.ensemble.GradientBoostingClassifier': &lt;class 'msdss_models_sklearn.core.GradientBoostingClassifier'&gt;,
+ 'sklearn.ensemble.GradientBoostingRegressor': &lt;class 'msdss_models_sklearn.core.GradientBoostingRegressor'&gt;,
+ 'sklearn.ensemble.HistGradientBoostingClassifier': &lt;class 'msdss_models_sklearn.core.HistGradientBoostingClassifier'&gt;,
+ 'sklearn.ensemble.HistGradientBoostingRegressor': &lt;class 'msdss_models_sklearn.core.HistGradientBoostingRegressor'&gt;,
+ 'sklearn.ensemble.IsolationForest': &lt;class 'msdss_models_sklearn.core.IsolationForest'&gt;,
+ 'sklearn.ensemble.RandomForestClassifier': &lt;class 'msdss_models_sklearn.core.RandomForestClassifier'&gt;,
+ 'sklearn.ensemble.RandomForestRegressor': &lt;class 'msdss_models_sklearn.core.RandomForestRegressor'&gt;,
+ 'sklearn.ensemble.RandomTreesEmbedding': &lt;class 'msdss_models_sklearn.core.RandomTreesEmbedding'&gt;,
+ 'sklearn.ensemble.StackingClassifier': &lt;class 'msdss_models_sklearn.core.StackingClassifier'&gt;,
+ 'sklearn.ensemble.StackingRegressor': &lt;class 'msdss_models_sklearn.core.StackingRegressor'&gt;,
+ 'sklearn.ensemble.VotingClassifier': &lt;class 'msdss_models_sklearn.core.VotingClassifier'&gt;,
+ 'sklearn.ensemble.VotingRegressor': &lt;class 'msdss_models_sklearn.core.VotingRegressor'&gt;,
+ 'sklearn.feature_extraction.DictVectorizer': &lt;class 'msdss_models_sklearn.core.DictVectorizer'&gt;,
+ 'sklearn.feature_extraction.FeatureHasher': &lt;class 'msdss_models_sklearn.core.FeatureHasher'&gt;,
+ 'sklearn.feature_selection.GenericUnivariateSelect': &lt;class 'msdss_models_sklearn.core.GenericUnivariateSelect'&gt;,
+ 'sklearn.feature_selection.RFE': &lt;class 'msdss_models_sklearn.core.RFE'&gt;,
+ 'sklearn.feature_selection.RFECV': &lt;class 'msdss_models_sklearn.core.RFECV'&gt;,
+ 'sklearn.feature_selection.SelectFdr': &lt;class 'msdss_models_sklearn.core.SelectFdr'&gt;,
+ 'sklearn.feature_selection.SelectFpr': &lt;class 'msdss_models_sklearn.core.SelectFpr'&gt;,
+ 'sklearn.feature_selection.SelectFromModel': &lt;class 'msdss_models_sklearn.core.SelectFromModel'&gt;,
+ 'sklearn.feature_selection.SelectFwe': &lt;class 'msdss_models_sklearn.core.SelectFwe'&gt;,
+ 'sklearn.feature_selection.SelectKBest': &lt;class 'msdss_models_sklearn.core.SelectKBest'&gt;,
+ 'sklearn.feature_selection.SelectPercentile': &lt;class 'msdss_models_sklearn.core.SelectPercentile'&gt;,
+ 'sklearn.feature_selection.SelectorMixin': &lt;class 'msdss_models_sklearn.core.SelectorMixin'&gt;,
+ 'sklearn.feature_selection.SequentialFeatureSelector': &lt;class 'msdss_models_sklearn.core.SequentialFeatureSelector'&gt;,
+ 'sklearn.feature_selection.VarianceThreshold': &lt;class 'msdss_models_sklearn.core.VarianceThreshold'&gt;,
+ 'sklearn.gaussian_process.GaussianProcessClassifier': &lt;class 'msdss_models_sklearn.core.GaussianProcessClassifier'&gt;,
+ 'sklearn.gaussian_process.GaussianProcessRegressor': &lt;class 'msdss_models_sklearn.core.GaussianProcessRegressor'&gt;,
+ 'sklearn.impute.KNNImputer': &lt;class 'msdss_models_sklearn.core.KNNImputer'&gt;,
+ 'sklearn.impute.MissingIndicator': &lt;class 'msdss_models_sklearn.core.MissingIndicator'&gt;,
+ 'sklearn.impute.SimpleImputer': &lt;class 'msdss_models_sklearn.core.SimpleImputer'&gt;,
+ 'sklearn.isotonic.IsotonicRegression': &lt;class 'msdss_models_sklearn.core.IsotonicRegression'&gt;,
+ 'sklearn.kernel_approximation.AdditiveChi2Sampler': &lt;class 'msdss_models_sklearn.core.AdditiveChi2Sampler'&gt;,
+ 'sklearn.kernel_approximation.Nystroem': &lt;class 'msdss_models_sklearn.core.Nystroem'&gt;,
+ 'sklearn.kernel_approximation.PolynomialCountSketch': &lt;class 'msdss_models_sklearn.core.PolynomialCountSketch'&gt;,
+ 'sklearn.kernel_approximation.RBFSampler': &lt;class 'msdss_models_sklearn.core.RBFSampler'&gt;,
+ 'sklearn.kernel_approximation.SkewedChi2Sampler': &lt;class 'msdss_models_sklearn.core.SkewedChi2Sampler'&gt;,
+ 'sklearn.kernel_ridge.KernelRidge': &lt;class 'msdss_models_sklearn.core.KernelRidge'&gt;,
+ 'sklearn.linear_model.ARDRegression': &lt;class 'msdss_models_sklearn.core.ARDRegression'&gt;,
+ 'sklearn.linear_model.BayesianRidge': &lt;class 'msdss_models_sklearn.core.BayesianRidge'&gt;,
+ 'sklearn.linear_model.ElasticNet': &lt;class 'msdss_models_sklearn.core.ElasticNet'&gt;,
+ 'sklearn.linear_model.ElasticNetCV': &lt;class 'msdss_models_sklearn.core.ElasticNetCV'&gt;,
+ 'sklearn.linear_model.GammaRegressor': &lt;class 'msdss_models_sklearn.core.GammaRegressor'&gt;,
+ 'sklearn.linear_model.Hinge': &lt;class 'msdss_models_sklearn.core.Hinge'&gt;,
+ 'sklearn.linear_model.Huber': &lt;class 'msdss_models_sklearn.core.Huber'&gt;,
+ 'sklearn.linear_model.HuberRegressor': &lt;class 'msdss_models_sklearn.core.HuberRegressor'&gt;,
+ 'sklearn.linear_model.Lars': &lt;class 'msdss_models_sklearn.core.Lars'&gt;,
+ 'sklearn.linear_model.LarsCV': &lt;class 'msdss_models_sklearn.core.LarsCV'&gt;,
+ 'sklearn.linear_model.Lasso': &lt;class 'msdss_models_sklearn.core.Lasso'&gt;,
+ 'sklearn.linear_model.LassoCV': &lt;class 'msdss_models_sklearn.core.LassoCV'&gt;,
+ 'sklearn.linear_model.LassoLars': &lt;class 'msdss_models_sklearn.core.LassoLars'&gt;,
+ 'sklearn.linear_model.LassoLarsCV': &lt;class 'msdss_models_sklearn.core.LassoLarsCV'&gt;,
+ 'sklearn.linear_model.LassoLarsIC': &lt;class 'msdss_models_sklearn.core.LassoLarsIC'&gt;,
+ 'sklearn.linear_model.LinearRegression': &lt;class 'msdss_models_sklearn.core.LinearRegression'&gt;,
+ 'sklearn.linear_model.Log': &lt;class 'msdss_models_sklearn.core.Log'&gt;,
+ 'sklearn.linear_model.LogisticRegression': &lt;class 'msdss_models_sklearn.core.LogisticRegression'&gt;,
+ 'sklearn.linear_model.LogisticRegressionCV': &lt;class 'msdss_models_sklearn.core.LogisticRegressionCV'&gt;,
+ 'sklearn.linear_model.ModifiedHuber': &lt;class 'msdss_models_sklearn.core.ModifiedHuber'&gt;,
+ 'sklearn.linear_model.MultiTaskElasticNet': &lt;class 'msdss_models_sklearn.core.MultiTaskElasticNet'&gt;,
+ 'sklearn.linear_model.MultiTaskElasticNetCV': &lt;class 'msdss_models_sklearn.core.MultiTaskElasticNetCV'&gt;,
+ 'sklearn.linear_model.MultiTaskLasso': &lt;class 'msdss_models_sklearn.core.MultiTaskLasso'&gt;,
+ 'sklearn.linear_model.MultiTaskLassoCV': &lt;class 'msdss_models_sklearn.core.MultiTaskLassoCV'&gt;,
+ 'sklearn.linear_model.OrthogonalMatchingPursuit': &lt;class 'msdss_models_sklearn.core.OrthogonalMatchingPursuit'&gt;,
+ 'sklearn.linear_model.OrthogonalMatchingPursuitCV': &lt;class 'msdss_models_sklearn.core.OrthogonalMatchingPursuitCV'&gt;,
+ 'sklearn.linear_model.PassiveAggressiveClassifier': &lt;class 'msdss_models_sklearn.core.PassiveAggressiveClassifier'&gt;,
+ 'sklearn.linear_model.PassiveAggressiveRegressor': &lt;class 'msdss_models_sklearn.core.PassiveAggressiveRegressor'&gt;,
+ 'sklearn.linear_model.Perceptron': &lt;class 'msdss_models_sklearn.core.Perceptron'&gt;,
+ 'sklearn.linear_model.PoissonRegressor': &lt;class 'msdss_models_sklearn.core.PoissonRegressor'&gt;,
+ 'sklearn.linear_model.QuantileRegressor': &lt;class 'msdss_models_sklearn.core.QuantileRegressor'&gt;,
+ 'sklearn.linear_model.RANSACRegressor': &lt;class 'msdss_models_sklearn.core.RANSACRegressor'&gt;,
+ 'sklearn.linear_model.Ridge': &lt;class 'msdss_models_sklearn.core.Ridge'&gt;,
+ 'sklearn.linear_model.RidgeCV': &lt;class 'msdss_models_sklearn.core.RidgeCV'&gt;,
+ 'sklearn.linear_model.RidgeClassifier': &lt;class 'msdss_models_sklearn.core.RidgeClassifier'&gt;,
+ 'sklearn.linear_model.RidgeClassifierCV': &lt;class 'msdss_models_sklearn.core.RidgeClassifierCV'&gt;,
+ 'sklearn.linear_model.SGDClassifier': &lt;class 'msdss_models_sklearn.core.SGDClassifier'&gt;,
+ 'sklearn.linear_model.SGDOneClassSVM': &lt;class 'msdss_models_sklearn.core.SGDOneClassSVM'&gt;,
+ 'sklearn.linear_model.SGDRegressor': &lt;class 'msdss_models_sklearn.core.SGDRegressor'&gt;,
+ 'sklearn.linear_model.SquaredLoss': &lt;class 'msdss_models_sklearn.core.SquaredLoss'&gt;,
+ 'sklearn.linear_model.TheilSenRegressor': &lt;class 'msdss_models_sklearn.core.TheilSenRegressor'&gt;,
+ 'sklearn.linear_model.TweedieRegressor': &lt;class 'msdss_models_sklearn.core.TweedieRegressor'&gt;,
+ 'sklearn.manifold.Isomap': &lt;class 'msdss_models_sklearn.core.Isomap'&gt;,
+ 'sklearn.manifold.LocallyLinearEmbedding': &lt;class 'msdss_models_sklearn.core.LocallyLinearEmbedding'&gt;,
+ 'sklearn.manifold.MDS': &lt;class 'msdss_models_sklearn.core.MDS'&gt;,
+ 'sklearn.manifold.SpectralEmbedding': &lt;class 'msdss_models_sklearn.core.SpectralEmbedding'&gt;,
+ 'sklearn.manifold.TSNE': &lt;class 'msdss_models_sklearn.core.TSNE'&gt;,
+ 'sklearn.mixture.BayesianGaussianMixture': &lt;class 'msdss_models_sklearn.core.BayesianGaussianMixture'&gt;,
+ 'sklearn.mixture.GaussianMixture': &lt;class 'msdss_models_sklearn.core.GaussianMixture'&gt;,
+ 'sklearn.naive_bayes.BernoulliNB': &lt;class 'msdss_models_sklearn.core.BernoulliNB'&gt;,
+ 'sklearn.naive_bayes.CategoricalNB': &lt;class 'msdss_models_sklearn.core.CategoricalNB'&gt;,
+ 'sklearn.naive_bayes.ComplementNB': &lt;class 'msdss_models_sklearn.core.ComplementNB'&gt;,
+ 'sklearn.naive_bayes.GaussianNB': &lt;class 'msdss_models_sklearn.core.GaussianNB'&gt;,
+ 'sklearn.naive_bayes.MultinomialNB': &lt;class 'msdss_models_sklearn.core.MultinomialNB'&gt;,
+ 'sklearn.neighbors.BallTree': &lt;class 'msdss_models_sklearn.core.BallTree'&gt;,
+ 'sklearn.neighbors.DistanceMetric': &lt;class 'msdss_models_sklearn.core.DistanceMetric'&gt;,
+ 'sklearn.neighbors.KDTree': &lt;class 'msdss_models_sklearn.core.KDTree'&gt;,
+ 'sklearn.neighbors.KNeighborsClassifier': &lt;class 'msdss_models_sklearn.core.KNeighborsClassifier'&gt;,
+ 'sklearn.neighbors.KNeighborsRegressor': &lt;class 'msdss_models_sklearn.core.KNeighborsRegressor'&gt;,
+ 'sklearn.neighbors.KNeighborsTransformer': &lt;class 'msdss_models_sklearn.core.KNeighborsTransformer'&gt;,
+ 'sklearn.neighbors.KernelDensity': &lt;class 'msdss_models_sklearn.core.KernelDensity'&gt;,
+ 'sklearn.neighbors.LocalOutlierFactor': &lt;class 'msdss_models_sklearn.core.LocalOutlierFactor'&gt;,
+ 'sklearn.neighbors.NearestCentroid': &lt;class 'msdss_models_sklearn.core.NearestCentroid'&gt;,
+ 'sklearn.neighbors.NearestNeighbors': &lt;class 'msdss_models_sklearn.core.NearestNeighbors'&gt;,
+ 'sklearn.neighbors.NeighborhoodComponentsAnalysis': &lt;class 'msdss_models_sklearn.core.NeighborhoodComponentsAnalysis'&gt;,
+ 'sklearn.neighbors.RadiusNeighborsClassifier': &lt;class 'msdss_models_sklearn.core.RadiusNeighborsClassifier'&gt;,
+ 'sklearn.neighbors.RadiusNeighborsRegressor': &lt;class 'msdss_models_sklearn.core.RadiusNeighborsRegressor'&gt;,
+ 'sklearn.neighbors.RadiusNeighborsTransformer': &lt;class 'msdss_models_sklearn.core.RadiusNeighborsTransformer'&gt;,
+ 'sklearn.neural_network.BernoulliRBM': &lt;class 'msdss_models_sklearn.core.BernoulliRBM'&gt;,
+ 'sklearn.neural_network.MLPClassifier': &lt;class 'msdss_models_sklearn.core.MLPClassifier'&gt;,
+ 'sklearn.neural_network.MLPRegressor': &lt;class 'msdss_models_sklearn.core.MLPRegressor'&gt;,
+ 'sklearn.preprocessing.Binarizer': &lt;class 'msdss_models_sklearn.core.Binarizer'&gt;,
+ 'sklearn.preprocessing.FunctionTransformer': &lt;class 'msdss_models_sklearn.core.FunctionTransformer'&gt;,
+ 'sklearn.preprocessing.KBinsDiscretizer': &lt;class 'msdss_models_sklearn.core.KBinsDiscretizer'&gt;,
+ 'sklearn.preprocessing.KernelCenterer': &lt;class 'msdss_models_sklearn.core.KernelCenterer'&gt;,
+ 'sklearn.preprocessing.LabelBinarizer': &lt;class 'msdss_models_sklearn.core.LabelBinarizer'&gt;,
+ 'sklearn.preprocessing.LabelEncoder': &lt;class 'msdss_models_sklearn.core.LabelEncoder'&gt;,
+ 'sklearn.preprocessing.MaxAbsScaler': &lt;class 'msdss_models_sklearn.core.MaxAbsScaler'&gt;,
+ 'sklearn.preprocessing.MinMaxScaler': &lt;class 'msdss_models_sklearn.core.MinMaxScaler'&gt;,
+ 'sklearn.preprocessing.MultiLabelBinarizer': &lt;class 'msdss_models_sklearn.core.MultiLabelBinarizer'&gt;,
+ 'sklearn.preprocessing.Normalizer': &lt;class 'msdss_models_sklearn.core.Normalizer'&gt;,
+ 'sklearn.preprocessing.OneHotEncoder': &lt;class 'msdss_models_sklearn.core.OneHotEncoder'&gt;,
+ 'sklearn.preprocessing.OrdinalEncoder': &lt;class 'msdss_models_sklearn.core.OrdinalEncoder'&gt;,
+ 'sklearn.preprocessing.PolynomialFeatures': &lt;class 'msdss_models_sklearn.core.PolynomialFeatures'&gt;,
+ 'sklearn.preprocessing.PowerTransformer': &lt;class 'msdss_models_sklearn.core.PowerTransformer'&gt;,
+ 'sklearn.preprocessing.QuantileTransformer': &lt;class 'msdss_models_sklearn.core.QuantileTransformer'&gt;,
+ 'sklearn.preprocessing.RobustScaler': &lt;class 'msdss_models_sklearn.core.RobustScaler'&gt;,
+ 'sklearn.preprocessing.SplineTransformer': &lt;class 'msdss_models_sklearn.core.SplineTransformer'&gt;,
+ 'sklearn.preprocessing.StandardScaler': &lt;class 'msdss_models_sklearn.core.StandardScaler'&gt;,
+ 'sklearn.random_projection.BaseRandomProjection': &lt;class 'msdss_models_sklearn.core.BaseRandomProjection'&gt;,
+ 'sklearn.random_projection.GaussianRandomProjection': &lt;class 'msdss_models_sklearn.core.GaussianRandomProjection'&gt;,
+ 'sklearn.random_projection.SparseRandomProjection': &lt;class 'msdss_models_sklearn.core.SparseRandomProjection'&gt;,
+ 'sklearn.semi_supervised.LabelPropagation': &lt;class 'msdss_models_sklearn.core.LabelPropagation'&gt;,
+ 'sklearn.semi_supervised.LabelSpreading': &lt;class 'msdss_models_sklearn.core.LabelSpreading'&gt;,
+ 'sklearn.semi_supervised.SelfTrainingClassifier': &lt;class 'msdss_models_sklearn.core.SelfTrainingClassifier'&gt;,
+ 'sklearn.svm.LinearSVC': &lt;class 'msdss_models_sklearn.core.LinearSVC'&gt;,
+ 'sklearn.svm.LinearSVR': &lt;class 'msdss_models_sklearn.core.LinearSVR'&gt;,
+ 'sklearn.svm.NuSVC': &lt;class 'msdss_models_sklearn.core.NuSVC'&gt;,
+ 'sklearn.svm.NuSVR': &lt;class 'msdss_models_sklearn.core.NuSVR'&gt;,
+ 'sklearn.svm.OneClassSVM': &lt;class 'msdss_models_sklearn.core.OneClassSVM'&gt;,
+ 'sklearn.svm.SVC': &lt;class 'msdss_models_sklearn.core.SVC'&gt;,
+ 'sklearn.svm.SVR': &lt;class 'msdss_models_sklearn.core.SVR'&gt;,
+ 'sklearn.tree.BaseDecisionTree': &lt;class 'msdss_models_sklearn.core.BaseDecisionTree'&gt;,
+ 'sklearn.tree.DecisionTreeClassifier': &lt;class 'msdss_models_sklearn.core.DecisionTreeClassifier'&gt;,
+ 'sklearn.tree.DecisionTreeRegressor': &lt;class 'msdss_models_sklearn.core.DecisionTreeRegressor'&gt;,
+ 'sklearn.tree.ExtraTreeClassifier': &lt;class 'msdss_models_sklearn.core.ExtraTreeClassifier'&gt;,
+ 'sklearn.tree.ExtraTreeRegressor': &lt;class 'msdss_models_sklearn.core.ExtraTreeRegressor'&gt;}
+</pre></div>
+</div>
+</div>
+</div>
+</dd></dl>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="index.html" title="API Reference"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> API Reference </span>
+              </div>
+            </a>
+          
+          
+            <a href="tools.html" title="tools"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> tools </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021, Richard Wen.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
