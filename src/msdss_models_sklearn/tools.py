@@ -1,5 +1,39 @@
 import pandas
 
+from msdss_models_api.models import Model
+
+def create_init_method(can_input=True, can_output=True, can_update=True):
+    """
+    Create model init method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.
+
+    See :class:`msdss_models_api:msdss_models_api.models.Model`.
+
+    Parameters
+    ----------
+    can_input : bool
+        Whether the method ``.input`` is defined and available. This is useful for controlling route requests in an API.
+    can_output : bool
+        Whether the method ``.output`` is defined and available. This is useful for controlling route requests in an API.
+    can_update : bool
+        Whether the method ``.update`` is defined and available. This is useful for controlling route requests in an API.
+
+    Author
+    ------
+    Richard Wen <rrwen.dev@gmail.com>
+    
+    Example
+    -------
+    .. jupyter-execute::
+
+        from msdss_models_sklearn.tools import *
+        from sklearn.linear_model import LinearRegression
+
+        input = create_input_method(LinearRegression)
+    """
+    def init(self, can_input=can_input, can_output=can_output, can_update=can_update, *args, **kwargs):
+        Model.__init__(self, can_input=can_input, can_output=can_output, can_update=can_update, *args, **kwargs)
+    return init
+
 def create_input_method(model):
     """
     Create model input method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.

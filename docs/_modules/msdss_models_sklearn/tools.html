@@ -46,7 +46,7 @@
   
   
   
-    <title>msdss_models_sklearn.tools &#8212; 0.0.0</title>
+    <title>msdss_models_sklearn.tools &#8212; 0.0.1</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -87,11 +87,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="0.0.0"
+        <a href="../../index.html" title="0.0.1"
            class="md-header-nav__button md-logo">
           
               <img src="../../_static/logo.svg" height="26"
-                   alt="0.0.0 logo">
+                   alt="0.0.1 logo">
           
         </a>
       </div>
@@ -174,7 +174,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">0.0.0</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">0.0.1</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Module code</a></li>
       </ul>
     </div>
@@ -187,13 +187,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="0.0.0" class="md-nav__button md-logo">
+    <a href="../../index.html" title="0.0.1" class="md-nav__button md-logo">
       
         <img src="../../_static/logo.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="0.0.0">msdss-models-sklearn</a>
+       title="0.0.1">msdss-models-sklearn</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/rrwen/msdss-models-sklearn/" title="Go to repository" class="md-source" data-md-source="github">
@@ -270,6 +270,40 @@
             
   <h1 id="modules-msdss-models-sklearn-tools--page-root">Source code for msdss_models_sklearn.tools</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="kn">from</span> <span class="nn">msdss_models_api.models</span> <span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">def</span> <span class="nf">create_init_method</span><span class="p">(</span><span class="n">can_input</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">can_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">can_update</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Create model init method for scikit-learn models to be compatible with :class:`msdss_models_api:msdss_models_api.models.Model`.</span>
+
+<span class="sd">    See :class:`msdss_models_api:msdss_models_api.models.Model`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    can_input : bool</span>
+<span class="sd">        Whether the method ``.input`` is defined and available. This is useful for controlling route requests in an API.</span>
+<span class="sd">    can_output : bool</span>
+<span class="sd">        Whether the method ``.output`` is defined and available. This is useful for controlling route requests in an API.</span>
+<span class="sd">    can_update : bool</span>
+<span class="sd">        Whether the method ``.update`` is defined and available. This is useful for controlling route requests in an API.</span>
+
+<span class="sd">    Author</span>
+<span class="sd">    ------</span>
+<span class="sd">    Richard Wen &lt;rrwen.dev@gmail.com&gt;</span>
+<span class="sd">    </span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    .. jupyter-execute::</span>
+
+<span class="sd">        from msdss_models_sklearn.tools import *</span>
+<span class="sd">        from sklearn.linear_model import LinearRegression</span>
+
+<span class="sd">        input = create_input_method(LinearRegression)</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">can_input</span><span class="o">=</span><span class="n">can_input</span><span class="p">,</span> <span class="n">can_output</span><span class="o">=</span><span class="n">can_output</span><span class="p">,</span> <span class="n">can_update</span><span class="o">=</span><span class="n">can_update</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Model</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">can_input</span><span class="o">=</span><span class="n">can_input</span><span class="p">,</span> <span class="n">can_output</span><span class="o">=</span><span class="n">can_output</span><span class="p">,</span> <span class="n">can_update</span><span class="o">=</span><span class="n">can_update</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">init</span>
 
 <div class="viewcode-block" id="create_input_method"><a class="viewcode-back" href="../../reference/tools.html#msdss_models_sklearn.tools.create_input_method">[docs]</a><span class="k">def</span> <span class="nf">create_input_method</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
     <span class="sd">"""</span>
