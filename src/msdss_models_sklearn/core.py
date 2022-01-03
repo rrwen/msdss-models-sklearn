@@ -70,6 +70,10 @@ def get_sklearn_models(base_module=__name__, modules=DEFAULT_MODULES):
                 'update': create_update_method()
             })
 
+            # (get_sklearn_models_create_del) Delete unneeded methods
+            if not can_update:
+                delattr(converted_model, 'update')
+
             # (get_sklearn_models_create_module) Add to module namespace
             setattr(sys.modules[base_module], model.__name__, converted_model)
 
@@ -86,8 +90,8 @@ def get_sklearn_models(base_module=__name__, modules=DEFAULT_MODULES):
 
                 * ``x`` (list(str)): default independent variable names for ``input``, ``update``, and ``output``
                 * ``y`` (str): default dependent predictor variable name for ``input``, ``update``, and ``output``
-            *args, **kwargs
-                Additional arguments passed to `msdss_models_api.models.Model <https://rrwen.github.io/msdss-models-api/reference/models.html#model>`_.
+            kwargs : any
+                Additional keyword arguments passed to `msdss_models_api.models.Model <https://rrwen.github.io/msdss-models-api/reference/models.html#model>`_.
             """
 
             # (get_sklearn_models_create_docs_input) Add docs for input method
@@ -106,8 +110,8 @@ def get_sklearn_models(base_module=__name__, modules=DEFAULT_MODULES):
                 Dependent predictor variable name to fit the model from parameter ``data``.
             _fit : dict
                 Additional keyword arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}#{model_name}.fit>`_
-            *args, **kwargs
-                Additional arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}>`_.
+            kwargs : any
+                Additional keyword arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}>`_.
             """
 
             # (get_sklearn_models_create_docs_output) Add docs for output method
@@ -125,8 +129,8 @@ def get_sklearn_models(base_module=__name__, modules=DEFAULT_MODULES):
                 Column names for independent variables from parameter ``data``. This can also be useful to reorder columns.
             y : str
                 Column name for dependent predictor variable for output.
-            *args, **kwargs
-                Additional arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}.{output_method}>`_.
+            kwargs : any
+                Additional keyword arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}.{output_method}>`_.
             """
 
             # (get_sklearn_models_create_docs_output) Add docs for output method
@@ -143,8 +147,8 @@ def get_sklearn_models(base_module=__name__, modules=DEFAULT_MODULES):
                 Independent variable names to fit the model from parameter ``data``.
             y : str
                 Dependent predictor variable name to fit the model from parameter ``data``.
-            *args, **kwargs : dict
-                Additional arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}#{model_name}.fit>`_.
+            kwargs : any
+                Additional keyword arguments passed to `{model_name} <https://scikit-learn.org/stable/modules/generated/{model_name}#{model_name}.fit>`_.
             """
 
             # (get_sklearn_models_create_out) Add converted model to dict

@@ -3,6 +3,11 @@ tools
 
 .. automodule:: msdss_models_sklearn.tools
 
+create_init_method
+------------------
+
+.. autofunction:: msdss_models_sklearn.tools.create_init_method
+
 create_input_method
 -------------------
 
